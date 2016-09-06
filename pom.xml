@@ -9,8 +9,12 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <dependencies>
+  <properties>
+    <wildfly.version>10.1.0.Final</wildfly.version>
+    <version.org.infinispan.query>8.2.4.Final</version.org.infinispan.query>
+  </properties>
 
+  <dependencies>
     <dependency>
       <groupId>org.jboss.spec.javax.servlet</groupId>
       <artifactId>jboss-servlet-api_3.1_spec</artifactId>
@@ -30,7 +34,7 @@
     <dependency>
       <groupId>org.infinispan</groupId>
       <artifactId>infinispan-query</artifactId>
-      <version>8.1.0.Final</version>
+      <version>${version.org.infinispan.query}</version>
     </dependency>
     <dependency>
       <groupId>org.infinispan</groupId>
@@ -49,7 +53,7 @@
       <dependency>
         <groupId>org.wildfly.bom</groupId>
         <artifactId>wildfly-javaee7</artifactId>
-        <version>10.0.0.Final</version>
+        <version>${wildfly.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
