@@ -6,7 +6,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 
 import org.infinispan.Cache;
-import org.infinispan.manager.CacheContainer;
+import org.infinispan.manager.EmbeddedCacheManager;
 import org.infinispan.query.Search;
 import org.infinispan.query.dsl.Query;
 import org.infinispan.query.dsl.QueryFactory;
@@ -25,7 +25,7 @@ public class StringCacheContainer {
     private static final String CACHE_NAME = "stringsContainer";
 
     @Resource(lookup = "java:jboss/infinispan/APM")
-    private CacheContainer cacheContainer;
+    private EmbeddedCacheManager cacheContainer;
 
     private Cache<String, StringWrapper> cache;
 
