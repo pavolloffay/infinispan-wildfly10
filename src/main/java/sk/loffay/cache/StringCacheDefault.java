@@ -16,12 +16,9 @@ import org.infinispan.query.dsl.QueryFactory;
  * @author Pavol Loffay
  */
 @Singleton
-public class StringCache {
+public class StringCacheDefault {
 
     private static final String CACHE_NAME = "strings";
-
-//    @Resource(lookup = "java:jboss/infinispan/APM")
-//    private CacheContainer cacheContainer;
 
     private Cache<String, StringWrapper> cache;
 
@@ -29,9 +26,6 @@ public class StringCache {
     public void init() {
         DefaultCacheManager defaultCacheManager = new DefaultCacheManager();
         cache = defaultCacheManager.getCache(CACHE_NAME);
-
-
-//        cache = cacheContainer.getCache(CACHE_NAME);
     }
 
     public void store(StringWrapper stringWrapper) {
